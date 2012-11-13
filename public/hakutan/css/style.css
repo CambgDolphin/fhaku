@@ -1,0 +1,97 @@
+﻿* {
+  margin:0px;
+  padding:0px;
+}
+html {
+  height: 100%;
+  background: #ffffff;
+}
+body {
+  margin:0;
+  padding:0;
+  overflow-y: scroll;
+}
+
+#basezone {
+  position:absolute;
+  width: 100%;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#mygrap {
+  position:fixed;
+  text-align: left;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+#mygrapg {
+  position:fixed;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#myname {
+  position:absolute;
+  text-align: left;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+#mynameg {
+  position:absolute;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#mylink {
+  position:absolute;
+  width: 0px;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#mybody {
+  position:absolute;
+  width: 0px;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:10px;
+  background-color:#ffffff;
+  font-size: 20px;
+}
+
+#linktitle {
+  font-size: 25px;
+  color:#0000ff;
+}
+#linkbody {
+  font-size: 20px;
+  color:#004400;
+  padding-left: 1.0em;
+  padding-top: 10px;
+}

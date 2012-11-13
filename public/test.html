@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>金印</title>
+<style>
+<!--
+* {
+  margin:0px;
+  padding:0px;
+}
+html {
+  background:url("images/bg001.jpg");
+}
+body {
+  margin:0;
+  padding:0;
+}
+
+#basezone {
+  position:absplute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#mygrap {
+  position:fixed;
+  text-align: left;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+#mygrapg {
+  position:fixed;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#myname {
+  position:fixed;
+  text-align: left;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+#mynameg {
+  position:fixed;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+}
+
+#mylink {
+  position:absolute;
+  width: 0px;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#linktitle {
+  font-size: 20px;
+  color:#0000ff;
+}
+#linkbody {
+  font-size: 15px;
+  color:#004400;
+  padding-left: 1.0em;
+  padding-top: 10px;
+}
+-->
+</style>
+<script>
+function windowInit() {
+  var scrWidth = document.documentElement.clientWidth;
+  var scrHeight = document.documentElement.clientHeight;
+
+  var tmpWidth = scrWidth * 5 / 16;
+  var obj = document.getElementById("mygrap");
+  obj.style.width = tmpWidth + 'px';
+  obj.style.height = tmpWidth + 'px';
+
+  var obj = document.getElementById("mygrapg");
+  obj.style.width = tmpWidth + 'px';
+  obj.style.height = tmpWidth + 'px';
+
+  var tmpWidth = scrWidth * 21 / 80;
+  var tmpHeight = scrHeight - (scrWidth * 27 / 80);
+  var obj = document.getElementById("mylink");
+  obj.style.left = (scrWidth / 40) + 'px';
+  obj.style.top = (scrWidth * 27 / 80) + 'px';
+  obj.style.width = tmpWidth + 'px';
+  //obj.style.height = tmpHeight + 'px';
+
+  var tmpWidth = scrWidth * 7 / 16;
+  var tmpHeight = tmpWidth * 12 / 35;
+
+  var obj = document.getElementById("myname");
+  obj.style.left = (scrWidth * 5 / 16) + 'px';
+  obj.style.top = '0px';
+  obj.style.width = tmpWidth + 'px';
+  obj.style.height = tmpHeight + 'px';
+
+  var obj = document.getElementById("mynameg");
+  obj.style.left = (scrWidth * 5 / 16) + 'px';
+  obj.style.top = '0px';
+  obj.style.width = tmpWidth + 'px';
+  obj.style.height = tmpHeight + 'px';
+
+
+}
+
+window.onload = function() {
+  windowInit();
+  var ttt = document.body.scrollHeight;
+  //window.alert("" + ttt);
+}
+
+window.onresize = function() {
+  windowInit();
+}
+</script>
+</head>
+<body>
+<div id="basezone">
+
+<div id="mygrap">
+<img src="images/fn01a001i.png" id="mygrapg" />
+</div>
+
+<div id="myname">
+<img src="images/fn01a001t.png" id="mynameg" />
+</div>
+
+<div id="mylink">
+<span id="linktitle">関連リンク</span><br>
+<div id="linkbody">
+関中候印<br>
+十一面観音菩薩立像<br>
+薬師如来坐像<br>
+七宝古画貼込屏風<br>
+野猪<br>
+ルクレティア<br>
+悲しみの聖母<br>
+エバイ（びっくりした男）<br>
+カンポ隕石（隕鉄）<br>
+三葉虫（オレネルス）<br>
+ディメトロドン<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</div>
+
+<div id="mybody">
+</div>
+
+</div>
+</body>
+</html>
