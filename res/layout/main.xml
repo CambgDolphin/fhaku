@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mitorizubase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/x01back2"
+    android:layout_margin="0px" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+	    android:background="@drawable/x01back"
+	    android:layout_margin="0px" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+		    android:layout_margin="0px" >
+
+            <TableRow
+                android:layout_weight="1"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="10"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="1"
+                    android:layout_width="0px" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="35"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/x01title"
+                    android:scaleType="fitXY" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="44"
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="4"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="5"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2"
+                    android:layout_width="0px" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="25"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/x01mapttl"
+                    android:scaleType="fitXY" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="53"
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="1"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="38"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2"
+                    android:layout_width="0px" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="57"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/x01map"
+                    android:scaleType="fitXY"
+                    android:id="@+id/map01" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="21"
+                    android:layout_width="0px" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="2"
+                android:layout_height="0px" >
+                <ImageView
+                    android:text=""
+                    android:layout_width="0px" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+		    android:layout_margin="0dip" >
+
+            <TableRow
+                android:layout_weight="2" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="7" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="62" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="7"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/bt_help"
+                    android:scaleType="fitXY"
+                    android:id="@+id/but01" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="7"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/bt_scan"
+                    android:scaleType="fitXY"
+                    android:id="@+id/but02" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="2" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="7" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="71" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="7"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/bt_setting"
+                    android:scaleType="fitXY"
+                    android:id="@+id/but03" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="10" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="30" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="60" />
+                <TextView
+                    android:text="説明を見たい展示物をタッチ、もしくはスキャンボタンを押してQRコードをスキャンしてください。"
+                    android:layout_weight="18"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitXY"
+                    android:textSize="12sp" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="2" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+
+        </TableLayout>
+
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+		    android:layout_margin="0dip" >
+
+            <TableRow
+                android:layout_weight="22" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="7" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="4" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="7"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/ico_knin"
+                    android:scaleType="fitXY"
+                    android:id="@+id/ico_knin" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="69" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="31" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

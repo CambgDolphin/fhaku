@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="0px" >
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_width="0px" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="10"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_weight="1"
+                android:layout_width="0px" />
+            <ImageView
+                android:text=""
+                android:layout_weight="35"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:src="@drawable/x01title"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:text=""
+                android:layout_weight="44"
+                android:layout_width="0px" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="38"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_weight="5"
+                android:layout_width="0px" />
+	        <View
+    	        android:id="@+id/viewfinder_view"
+                android:layout_weight="70"
+        	    android:layout_width="0px"
+            	android:layout_height="fill_parent"
+        	    android:background="#55ff6666" />
+            <ImageView
+                android:text=""
+                android:layout_weight="5"
+                android:layout_width="0px" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="5"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_width="0px" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="5"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_weight="3"
+                android:layout_width="0px" />
+            <ImageView
+                android:text=""
+                android:layout_weight="74"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:src="@drawable/x02mess"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:text=""
+                android:layout_weight="3"
+                android:layout_width="0px" />
+        </TableRow>
+        <TableRow
+            android:layout_weight="1"
+            android:layout_height="0px" >
+            <ImageView
+                android:text=""
+                android:layout_width="0px" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+	    android:id="@+id/qrbtnbase"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_margin="0px" >
+
+        <FrameLayout
+	        android:layout_width="fill_parent"
+    	    android:layout_height="fill_parent"
+	    	android:layout_margin="0px" >
+
+	        <TableLayout
+    	        android:layout_width="fill_parent"
+        	    android:layout_height="fill_parent"
+		    	android:layout_margin="0px" >
+
+                <TableRow
+	                android:layout_weight="2" >
+    	            <ImageView
+        	            android:text="" />
+            	</TableRow>
+	            <TableRow
+    	            android:layout_weight="7" >
+        	        <ImageView
+            	        android:text=""
+                	    android:layout_weight="71" />
+	                <ImageView
+    	                android:text=""
+        	            android:layout_weight="7"
+            	        android:layout_width="0px"
+                	    android:layout_height="fill_parent"
+                    	android:src="@drawable/bt_back"
+	                    android:scaleType="fitEnd"
+    	                android:id="@+id/qrbut01" />
+    	            <ImageView
+        	            android:text=""
+            	        android:layout_weight="2" />
+	            </TableRow>
+                <TableRow
+	                android:layout_weight="2" >
+    	            <ImageView
+        	            android:text="" />
+            	</TableRow>
+	            <TableRow
+    	            android:layout_weight="7" >
+        	        <ImageView
+            	        android:text=""
+                	    android:layout_weight="71" />
+	                <ImageView
+    	                android:text=""
+        	            android:layout_weight="7"
+            	        android:layout_width="0px"
+                	    android:layout_height="fill_parent"
+                    	android:src="@drawable/bt_map"
+	                    android:scaleType="fitEnd"
+    	                android:id="@+id/qrbut02" />
+    	            <ImageView
+        	            android:text=""
+            	        android:layout_weight="2" />
+	            </TableRow>
+                <TableRow
+	                android:layout_weight="42" >
+    	            <ImageView
+        	            android:text="" />
+            	</TableRow>
+
+	        </TableLayout>
+
+    	</FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
