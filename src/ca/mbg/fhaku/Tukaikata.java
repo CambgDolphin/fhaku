@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -14,7 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class Fhaku extends Activity {
+public class Tukaikata extends Activity {
+    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,7 @@ public class Fhaku extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.main);
+        setContentView(R.layout.tukaikata);
         int dx = 100;
         int dy = 100;
 
@@ -49,55 +49,23 @@ public class Fhaku extends Activity {
         	dy = (int)(ap / 2);
         }
 
-        LinearLayout layout = (LinearLayout)findViewById(R.id.mitorizubase);
+        LinearLayout layout = (LinearLayout)findViewById(R.id.tukaibase);
         float scale = this.getResources().getDisplayMetrics().density;
         int px = (int)(dx * scale);
         int py = (int)(dy * scale);
         //Toast.makeText(this, "" + px + ":" + py + " " + scale, Toast.LENGTH_LONG).show();
         layout.setPadding(px, py, px, py);
 
-        ImageView but01 = (ImageView)findViewById(R.id.but01);
+        ImageView but01 = (ImageView)findViewById(R.id.x02back);
         but01.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 //Stoast("あああ");
-            	Intent intent = new Intent(Fhaku.this, Tukaikata.class);
-                startActivity(intent);
-            }
-        });
-        ImageView but02 = (ImageView)findViewById(R.id.but02);
-        but02.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                //Stoast("いいい");
-            	Intent intent = new Intent(Fhaku.this, MyQRread.class);
-                startActivity(intent);
-            }
-        });
-        ImageView but03 = (ImageView)findViewById(R.id.but03);
-        but03.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-            	Intent intent = new Intent(Fhaku.this, Setting.class);
-                startActivity(intent);
-                //Stoast("ううう");
+            	//Intent intent = new Intent(Tu.this, Tukaikata.class);
+                //startActivity(intent);
+            	finish();
             }
         });
 
-        ImageView ico01 = (ImageView)findViewById(R.id.ico_knin);
-        ico01.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-            	Intent intent = new Intent(Fhaku.this, ViewRoll.class);
-                startActivity(intent);
-                //Stoast("ううう");
-            }
-        });
-
+        //setContentView(R.layout.tukaikata);
     }
-
-    public void Stoast(String c) {
-        Toast.makeText(this,c, Toast.LENGTH_LONG).show();
-    }
-
-
-
-
-
 }

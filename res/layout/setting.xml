@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settingb"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical"
+    android:layout_margin="0px" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+	    android:background="#ffffffff"
+	    android:layout_margin="0px" >
+
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:orientation="vertical"
+		    android:layout_margin="0px" >
+
+		    <ImageView
+		        android:text=""
+		        android:layout_weight="10"
+		        android:layout_height="0px"
+		        android:layout_width="fill_parent"
+		        android:src="@drawable/x03title"
+		        android:scaleType="fitStart"
+		        android:id="@+id/x03title" />
+
+		    <ImageView
+		        android:layout_weight="5"
+		        android:layout_height="0px"
+		        android:layout_width="fill_parent"
+		        android:text="" />
+
+		    <ScrollView
+		        android:layout_weight="45"
+		        android:layout_height="0px"
+		        android:layout_width="fill_parent"
+		        android:id="@+id/ScrollView">
+
+				<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="fill_parent"
+			        android:orientation="vertical"
+				    android:layout_margin="0px" >
+
+			        <CheckBox
+			            android:text="音を出さない"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+			        <CheckBox
+			            android:text="設定項目１"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+			        <CheckBox
+			            android:text="設定項目２"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+			        <CheckBox
+			            android:text="設定項目３"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+			        <CheckBox
+			            android:text="設定項目４"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+			        <CheckBox
+			            android:text="設定項目５"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:textColor="#ff000000" />
+
+				</LinearLayout>
+		    </ScrollView>
+
+		</LinearLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+		    android:layout_margin="0dip" >
+
+            <TableRow
+                android:layout_weight="51" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="7" >
+                <ImageView
+                    android:text=""
+                    android:layout_weight="51" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="7"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/bt_back"
+                    android:scaleType="fitEnd"
+                    android:id="@+id/x03back" />
+                <ImageView
+                    android:text=""
+                    android:layout_weight="2" />
+            </TableRow>
+            <TableRow
+                android:layout_weight="2" >
+                <ImageView
+                    android:text="" />
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
