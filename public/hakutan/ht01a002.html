@@ -52,7 +52,10 @@
 
 　<br>　<br>
 <center>
-<video src="images/movie01.mp4" poster="images/movie01.jpg" preload="none" onclick="this.play()"></video>
+<object width="320" height="240">
+<param name="movie" value="images/movie01.flv" />     <!-- for IE -->
+<embed src="images/movie01.flv" width="320" height="240" /> <!-- for Mozilla -->
+</object>
 </center>
 　<br>
 </div>
