@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -128,8 +129,12 @@ public class ViewRoll extends Activity {
         btn03.setOnClickListener(listener);
         layout.addView(btn03);
 
-        wv.loadUrl("http://fhaku.orchestra.io/fn01a001.html");
 
+        UserSession objUser = UserSession.getInstance();
+        String doURL = objUser.getdoURL();
+
+        //wv.loadUrl("http://fhaku.orchestra.io/fn01a001.html");
+        wv.loadUrl(doURL);
         //setContentView(R.layout.main);
     }
 
@@ -182,6 +187,7 @@ public class ViewRoll extends Activity {
 
 			if (v.getId() == 1) {
             	Intent intent = new Intent(ViewRoll.this,Fhaku.class);
+            	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 			}
 			if (v.getId() == 2) {
@@ -198,5 +204,15 @@ public class ViewRoll extends Activity {
 
 		}
     };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        WebView wv = (WebView)findViewById(5);
+        if ( keyCode == KeyEvent.KEYCODE_BACK  && wv.canGoBack() == true) {
+            wv.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 }

@@ -138,6 +138,7 @@ public class MyQRread extends Activity implements SurfaceHolder.Callback, Camera
                 myCamera.cancelAutoFocus();
             	closeCamera();
             	Intent intent = new Intent(MyQRread.this, Fhaku.class);
+            	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -272,10 +273,18 @@ public class MyQRread extends Activity implements SurfaceHolder.Callback, Camera
 	        try {
 	            Result result = reader.decode(bitmap);
 	            //Toast.makeText(this, result.getText(), Toast.LENGTH_LONG).show();
-                myCamera.cancelAutoFocus();
-            	closeCamera();
-            	Intent intent = new Intent(MyQRread.this, ViewRoll.class);
-                startActivity(intent);
+
+            	UserSession objUser = UserSession.getInstance();
+            	String doURL = result.getText();
+            	if (doURL.startsWith("fhaku://")) {
+                    myCamera.cancelAutoFocus();
+                	closeCamera();
+            		doURL = doURL.replaceFirst("fhaku://", "http://fhaku.orchestra.io/");
+            		objUser.setdoURL(doURL);
+                	Intent intent = new Intent(MyQRread.this, ViewRoll.class);
+                    startActivity(intent);
+            	}
+
 	        } catch (Exception e) {
 	            //Toast.makeText(this, "error: " + e.getMessage(), Toast.LENGTH_LONG).show();
 	            //Toast.makeText(this, "エラー発生: " + e.getMessage(), Toast.LENGTH_LONG).show();
