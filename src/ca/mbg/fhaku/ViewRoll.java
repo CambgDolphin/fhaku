@@ -2,12 +2,15 @@ package ca.mbg.fhaku;
 
 import ca.mbg.fhaku.R.drawable;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -80,14 +83,15 @@ public class ViewRoll extends Activity {
         wv.setWebViewClient(new TkFoxClient());
 
         WebChromeClient chromeClient = new WebChromeClient(){
-            @Override
+        	@Override
             public void onShowCustomView(View view, CustomViewCallback callback) {
                 // TODO Auto-generated method stub
                 super.onShowCustomView(view, callback);
-                if(view instanceof FrameLayout) {
+                Log.i("test","test");
+                if(view instanceof FrameLayout){
                     FrameLayout frame  = (FrameLayout)view;
-                    if(frame.getFocusedChild()instanceof VideoView) {
-                        VideoView video =  (VideoView)frame.getFocusedChild();
+                    if(frame.getFocusedChild()instanceof VideoView){
+                    VideoView video =  (VideoView)frame.getFocusedChild();
                         frame.removeView(video);
                         video.start();
                     }
