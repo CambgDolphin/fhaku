@@ -14,12 +14,15 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AbsoluteLayout;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.VideoView;
 
 public class ViewRoll extends Activity {
     int dx = 100;
@@ -75,6 +78,24 @@ public class ViewRoll extends Activity {
         wv.getSettings().setJavaScriptEnabled(true);
 
         wv.setWebViewClient(new TkFoxClient());
+
+        WebChromeClient chromeClient = new WebChromeClient(){
+            @Override
+            public void onShowCustomView(View view, CustomViewCallback callback) {
+                // TODO Auto-generated method stub
+                super.onShowCustomView(view, callback);
+                if(view instanceof FrameLayout) {
+                    FrameLayout frame  = (FrameLayout)view;
+                    if(frame.getFocusedChild()instanceof VideoView) {
+                        VideoView video =  (VideoView)frame.getFocusedChild();
+                        frame.removeView(video);
+                        video.start();
+                    }
+                }
+            }
+        };
+
+        wv.setWebChromeClient(chromeClient);
 
         //wv.loadUrl("file:///android_asset/index.html");
         //wv.loadUrl("https://dl.dropbox.com/u/88219936/index.html");
