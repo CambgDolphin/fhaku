@@ -10,6 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
 	    android:background="@drawable/x01back"
+    	android:id="@+id/mainFrame"
 	    android:layout_margin="0px" >
 
         <TableLayout

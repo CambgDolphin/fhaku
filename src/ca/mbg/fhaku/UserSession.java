@@ -19,4 +19,14 @@ public class UserSession {
         return _doURL;
     }
 
+    private String _vidURL = "";
+
+    public void setvidURL(String sURL) {
+        this._vidURL = sURL;
+    }
+
+    public String getvidURL() {
+        return _vidURL;
+    }
+
 }

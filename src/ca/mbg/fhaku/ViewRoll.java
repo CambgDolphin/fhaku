@@ -12,6 +12,7 @@ import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
@@ -40,6 +41,8 @@ public class ViewRoll extends Activity {
     double sx = 0;
     double sy = 0;
     String lurl = "";
+    View oV;
+    boolean nV = false;
 
 	/** Called when the activity is first created. */
     @Override
@@ -74,7 +77,7 @@ public class ViewRoll extends Activity {
         AbsoluteLayout layout = new AbsoluteLayout(this);
         //layout.setOrientation(LinearLayout.VERTICAL);
         setContentView(layout);
-
+        oV = layout;
 
         WebView wv = new WebView(this);
         wv.setWebViewClient(new WebViewClient() {});
@@ -82,20 +85,35 @@ public class ViewRoll extends Activity {
 
         wv.setWebViewClient(new TkFoxClient());
 
+
         WebChromeClient chromeClient = new WebChromeClient(){
         	@Override
             public void onShowCustomView(View view, CustomViewCallback callback) {
                 // TODO Auto-generated method stub
+
+                ViewGroup mainFrame = (ViewGroup)findViewById(R.id.mitorizubase);
+                Log.i("onSS", "in");
+                //mainFrame.addView(view);
+
+                setContentView(view);
+                nV = true;
+                WebChromeClient.CustomViewCallback customViewCallback;
+                customViewCallback = callback;
+                //customView = view;
+
+                //View browserFrame = findViewById(R.id.browserFrame);
+                //mainFrame.setVisibility(View.GONE);
+
+                //Log.i("test",wv.getUrl().toString());
+                //if(view instanceof FrameLayout){
+                //    FrameLayout frame  = (FrameLayout)view;
+                //    if(frame.getFocusedChild()instanceof VideoView){
+                //    VideoView video =  (VideoView)frame.getFocusedChild();
+                //        frame.removeView(video);
+                //        video.start();
+                //    }
+                //}
                 super.onShowCustomView(view, callback);
-                Log.i("test","test");
-                if(view instanceof FrameLayout){
-                    FrameLayout frame  = (FrameLayout)view;
-                    if(frame.getFocusedChild()instanceof VideoView){
-                    VideoView video =  (VideoView)frame.getFocusedChild();
-                        frame.removeView(video);
-                        video.start();
-                    }
-                }
             }
         };
 
@@ -200,9 +218,17 @@ public class ViewRoll extends Activity {
                 lurl = url;
             }
 
+
             //Button btn01 = (Button)findViewById(1);
             //btn01.setLayoutParams(new AbsoluteLayout.LayoutParams(bw, bw, rl, ti));
         }
+
+        public boolean shouldOverrideUrlLoading(WebView view, String urlStr) {
+    		// 特定のURLの場合、ダイアログを表示する等
+            Log.d("LINK", "Start:" + urlStr);
+
+    		return false;
+    	}
     }
 
     class ClickListener implements OnClickListener {
@@ -232,10 +258,18 @@ public class ViewRoll extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+
         WebView wv = (WebView)findViewById(5);
         if ( keyCode == KeyEvent.KEYCODE_BACK  && wv.canGoBack() == true) {
-            wv.goBack();
-            return true;
+        	if (nV = true) {
+        		setContentView(oV);
+        		nV = false;
+                return true;
+        	} else {
+        		wv.goBack();
+        		return true;
+        	}
         }
         return super.onKeyDown(keyCode, event);
     }
