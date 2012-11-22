@@ -43,6 +43,7 @@ public class ViewRoll extends Activity {
     String lurl = "";
     View oV;
     boolean nV = false;
+    WebChromeClient.CustomViewCallback customViewCallback;
 
 	/** Called when the activity is first created. */
     @Override
@@ -97,7 +98,7 @@ public class ViewRoll extends Activity {
 
                 setContentView(view);
                 nV = true;
-                WebChromeClient.CustomViewCallback customViewCallback;
+                Log.i("nV trace", "SET");
                 customViewCallback = callback;
                 //customView = view;
 
@@ -258,17 +259,22 @@ public class ViewRoll extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-
-        WebView wv = (WebView)findViewById(5);
-        if ( keyCode == KeyEvent.KEYCODE_BACK  && wv.canGoBack() == true) {
-        	if (nV = true) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+    		//Log.d("nV trace", "" + nV);
+        	if (nV == true) {
         		setContentView(oV);
+        		//oV = null;
         		nV = false;
-                return true;
-        	} else {
-        		wv.goBack();
+        		customViewCallback.onCustomViewHidden();
+        		customViewCallback = null;
+
         		return true;
+        	} else {
+        		WebView wv = (WebView)findViewById(5);
+        		if (wv.canGoBack() == true) {
+        			wv.goBack();
+        			return true;
+        		}
         	}
         }
         return super.onKeyDown(keyCode, event);
